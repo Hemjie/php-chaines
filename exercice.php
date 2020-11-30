@@ -80,51 +80,12 @@
                 $restc = substr($rep[3], -3);
                 $rep[3] = $c."ç".$restc;
             }
-            return implode("<br/>", $rep);      
-                        
+            if ($conjug !== null) {
+                return implode("<br/>", $rep);      
+            }  
         }
 
-        echo conjugaison($conjug);
-    
-        /* Exercice 3 : Statistiques */
-        echo "<h1>Statistiques</h1>";
-
-        $adress = ["marjo@gmail.com","steven@orange.fr","maman@outlook.com", "lela@gmail.com", "canelle@outlook.com", "bellemaman@sfr.fr", "rody@gmail.com", "valentin@aol.com"];
-        $domain = [];
-
-        foreach ($adress as $add) {
-            $cut1 = strstr($add, "@");
-            $cut2 = substr($cut1, 1);
-            $cut3 = strstr($cut2, ".", true);
-            array_push($domain, $cut3);
-        }
-
-        echo "<br/>";
-
-        $gmail = 0;
-        $orange = 0;
-        $outlook = 0;
-        $autre = 0;
-
-        foreach ($domain as $dom) {
-           if ($dom == "gmail") {
-               $gmail++;
-           } else if ($dom == "orange") {
-               $orange++;
-           } else if ($dom == "outlook") {
-               $outlook++;
-           } else {
-               $autre++;
-           }
-       }
-       
-       $total = count($domain);
-
-       echo "Gmail : ".($gmail*100 /$total)."% <br/>";
-       echo "Orange : ".($orange*100 /$total)."% <br/>";
-       echo "Outlook : ".($outlook*100 /$total)."% <br/>";
-       echo "Autres : ".($autre*100 /$total)."% <br/>";
-
+        echo conjugaison($conjug);    
     ?>
     
 </body>
