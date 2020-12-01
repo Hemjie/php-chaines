@@ -106,7 +106,7 @@
                             }  
                         }
 
-            echo conjugaison($conjug);    
+                        echo conjugaison($conjug);    
                      ?>
             </div>
         </form>
